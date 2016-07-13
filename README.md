@@ -6,6 +6,10 @@ between feeds and select articles to read.
 
 ## Overview
 
+### Curry Feedr
+
+A reddit app that takes the top topics relating to "Curry" and allows users to browse the latest items related to that.
+
 ### Introduction
 
 The web is an ever growing medium and it is getting more and more difficult to
