@@ -26,14 +26,16 @@
   }
 
   // Get Topics for Menu
-  fetch(redditTopicURL).then(function(response) {
+  fetch(redditTopicURL).then(function(response, err) {
       return response.json();
   }).then(function(json) {
     state.categories = json
     renderHeader(state, header);
     getSubReddit(state.categories[0].name)
     document.querySelector('ul.outer li span').innerHTML = state.categories[0].name
-  })
+  }).catch(function(err){
+    alert('Oh no something has gone wrong', err);
+  });
 
   // Setup delegate event handler on the dropdown menu
   delegate('header', 'click', 'ul.dropdown li a', function(event){
@@ -95,7 +97,10 @@
 
       })
 
-    });
+    }).catch(function(err){
+      alert('Oh no something has gone wrong');
+    })
+
   }
 
   // Find an object by referencing an identifier, in this case ID
